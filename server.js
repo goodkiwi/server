@@ -7,7 +7,11 @@ const app = express();
 const port = process.env.PORT || 3000; // Use environment port or 3000 if not specified
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'https://sites.google.com/view/tisbtypingtest/home',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+}));
 app.use(bodyParser.json());
 
 // MongoDB connection string
