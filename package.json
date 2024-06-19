@@ -1,0 +1,10 @@
+{
+  "name": "typing-test-app",
+  "version": "1.0.0",
+  "description": "A typing test application using Node.js, Express, and MongoDB.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongodb": "^4.3.0"
+  },
+}
