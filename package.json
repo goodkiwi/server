@@ -7,7 +7,8 @@
     "express": "^4.17.2",
     "mongodb": "^4.6.0",
     "cors": "^2.8.5",
-    "body-parser": "^1.19.0"
+    "body-parser": "^1.19.0",
+    "@aws-sdk/client-sso-oidc": "^3.598.0"
   },
   "scripts": {
     "start": "node server.js"
