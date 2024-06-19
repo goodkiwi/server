@@ -7,4 +7,9 @@
     "express": "^4.17.2",
     "mongodb": "^4.3.0"
   },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Your Name",
+  "license": "MIT"
 }
