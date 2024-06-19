@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000; // Use environment port or 3000 if not sp
 
 // Middleware
 app.use(cors({
-    origin: 'https://sites.google.com/view/tisbtypingtest/typing-test',
+    origin: 'https://sites.google.com/view/tisbtypingtest',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
 }));
