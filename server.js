@@ -22,8 +22,8 @@ MongoClient.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true 
 
         // Save score endpoint
         app.post('/saveScore', (req, res) => {
-            const { userID, timeTaken, accuracy } = req.body;
-            const score = { userID, timeTaken, accuracy, date: new Date() };
+            const { userID, avgwpm, avgaccuracy, score } = req.body;
+            const score = { userID, avgwpm, avgaccuracy, score, date: new Date() };
 
             scoresCollection.insertOne(score)
                 .then(result => {
