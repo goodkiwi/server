@@ -22,10 +22,17 @@ MongoClient.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true 
 
         // Save score endpoint
         app.post('/saveScore', (req, res) => {
-            const { userID, avgwpm, avgaccuracy, score } = req.body;
-            const score = { userID, avgwpm, avgaccuracy, score, date: new Date() };
+            const { userID, avgwpm, avgaccuracy, score: finalScore } = req.body; // Renamed score to finalScore
 
-            scoresCollection.insertOne(score)
+            const scoreObject = { 
+                userID, 
+                avgwpm, 
+                avgaccuracy, 
+                score: finalScore, // Using finalScore here
+                date: new Date() 
+            };
+
+            scoresCollection.insertOne(scoreObject)
                 .then(result => {
                     console.log('Score saved successfully:', result.ops[0]);
                     res.status(200).json(result.ops[0]);
@@ -45,4 +52,3 @@ MongoClient.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true 
     .catch(err => {
         console.error('Failed to connect to MongoDB:', err);
     });
-
