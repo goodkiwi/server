@@ -22,13 +22,14 @@ MongoClient.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true 
 
         // Save score endpoint
         app.post('/saveScore', (req, res) => {
-            const { userID, avgwpm, avgaccuracy, score: finalScore } = req.body; // Renamed score to finalScore
+            const { userID, avgwpm, avgaccuracy, score: finalScore, avgcpm } = req.body; // Renamed score to finalScore
 
             const scoreObject = { 
                 userID, 
                 avgwpm, 
                 avgaccuracy, 
                 score: finalScore, // Using finalScore here
+                avgcpm, 
                 date: new Date() 
             };
 
